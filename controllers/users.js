@@ -15,7 +15,12 @@ module.exports = {
             res.json({message: `New user named ${req.body.name} was created`, success: true, })
         })
     },
-    show: () => {},
+    show: (req,res) => {
+        User.findById(req.params.id, (err, user) => {
+            if (err) return console.log(err)
+            res.json(user)
+        })
+    },
     update: () => {},
     destroy: () => {}
 }
