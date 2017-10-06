@@ -1,7 +1,7 @@
 const 
     express = require('express')
     videosRouter = new express.Router()
-    User = require('../model/Model.js')
+    User = require('../model/User.js')
     usersCtrl = require('../controllers/users.js')
 
 usersRouter.route('/')
