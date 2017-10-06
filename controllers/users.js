@@ -21,6 +21,10 @@ module.exports = {
             res.json(user)
         })
     },
-    update: () => {},
+    update: (req,res) => {
+        User.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err,user) => {
+            res.json(user)
+        })
+    },
     destroy: () => {}
 }
