@@ -5,6 +5,7 @@ port = 3000,
 mongoose = require('mongoose'),
 bodyParser = require('body-parser'),
 logger = require('morgan')
+usersRoutes = require('./routes/users.js')
 
 mongoose.connect("mongodb://localhost/users", (err) => {
     console.log(err || "Connected to MongoDB")
