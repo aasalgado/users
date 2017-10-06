@@ -26,5 +26,10 @@ module.exports = {
             res.json(user)
         })
     },
-    destroy: () => {}
+    destroy: (req,res) => {
+        User.findByIdAndRemove(req.params.id, (err) => {
+            if (err) return console.log(err)
+            res.json({message: `User was deleted`, success: true})
+        })
+    }
 }
